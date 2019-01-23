@@ -37,3 +37,19 @@ print(products[0]["name"])
 #print the first product
 print(products[0])
 print("")
+
+#print the number of products
+print("There are " + str(len(products)) + " products")
+print("")
+
+#define product_name
+def product_name(any_product):
+    return any_product["name"]
+
+#sort the products by name
+products = sorted(products, key=product_name)
+
+#print each product
+
+for item in products:
+    print("+ " + item["name"] + " -- Price: $" + str("%0.2f" % item["price"]))

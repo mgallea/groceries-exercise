@@ -25,4 +25,15 @@ products = [
 
 print(products)
 
-# TODO: write some Python code here to produce the desired output
+#print the data types of the data structures
+print("")
+print("Metadata Test:")
+print(type(products))
+print(type(products[0]))
+
+#print the name of the first product
+print(products[0]["name"])
+
+#print the first product
+print(products[0])
+print("")

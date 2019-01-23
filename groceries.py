@@ -53,3 +53,36 @@ products = sorted(products, key=product_name)
 
 for item in products:
     print("+ " + item["name"] + " -- Price: $" + str("%0.2f" % item["price"]))
+
+    
+#count the number of departments
+departments = [ ]
+depCount = 0
+for item in products:
+    if item["department"] not in departments:
+        departments.append(item["department"])
+        depCount = depCount + 1
+
+#sort the departments
+departments = sorted(departments)
+
+#print the departments header
+print("")
+print("There are " + str(depCount) + " departments")
+print("")
+print("The departments are:")
+
+#print the number of departments and count of products in the department
+for dep in departments:
+    itemCounter = 0
+    for item in products:
+        if item["department"] == dep:
+            itemCounter = itemCounter + 1
+    if itemCounter > 1:
+        print("+ " + dep + " has " + str(itemCounter) + " products")
+    if itemCounter == 1:
+        print("+ " + dep + " has " + str(itemCounter) + " product")
+    if itemCounter < 1:
+        print("+ " +    dep + " has " + str(itemCounter) + " products")
+
+print("")
